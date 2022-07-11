@@ -10,8 +10,8 @@ updates:
     assignees:
       - mixerou
     commit-message:
-      prefix: build(npm)
-      prefix-development: build(npm)
+      prefix: build
+      prefix-development: build
       include: scope
   - package-ecosystem: github-actions
     directory: '/'
@@ -23,6 +23,6 @@ updates:
     assignees:
       - mixerou
     commit-message:
-      prefix: ci(gh-actions)
-      prefix-development: ci(gh-actions)
+      prefix: ci
+      prefix-development: ci
       include: scope

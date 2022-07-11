@@ -34,7 +34,10 @@ jobs:
             lint
             nuxt
             npm
+            deps
+            dev-deps
             gh-actions
+            deps-bot
           requireScope: true
           ignoreLabels: |
             bot
