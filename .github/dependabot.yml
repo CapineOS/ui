@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    reviewers:
+      - mixerou
+    assignees:
+      - mixerou
+    commit-message:
+      prefix: build(npm)
+      prefix-development: build(npm)
+      include: scope
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    reviewers:
+      - mixerou
+    assignees:
+      - mixerou
+    commit-message:
+      prefix: ci(gh-actions)
+      prefix-development: ci(gh-actions)
+      include: scope

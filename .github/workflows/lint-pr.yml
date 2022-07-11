@@ -1,0 +1,41 @@
+name: 'Lint PR'
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+jobs:
+  main:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validating PR title 👀
+        uses: amannn/action-semantic-pull-request@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Edit types in commitlint.config.js
+          types: |
+            fix
+            feat
+            refactor
+            perf
+            build
+            ci
+          # Edit scopes in commitlint.config.js
+          scopes: |
+            components
+            pages
+            layouts
+            lint
+            nuxt
+            npm
+            gh-actions
+          requireScope: true
+          ignoreLabels: |
+            bot
+            ignore-semantic-pr
