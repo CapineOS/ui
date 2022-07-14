@@ -103,6 +103,7 @@ jobs:
       - uses: actions/checkout@v2.3.3
         with:
           fetch-depth: 0
+          token: ${{ secrets.COMBINE_PRS_TOKEN }}
       - name: Create combined branch
         env:
           BASE_BRANCH: ${{ steps.fetch-branch-names.outputs.baseBranch }}
@@ -130,7 +131,7 @@ jobs:
         env:
           PULLS: ${{ steps.fetch-branch-names.outputs.pulls }}
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.COMBINE_PRS_TOKEN }}
           script: |
             const pulls = process.env.PULLS
             const body = 'This PR was created by combining the following PRs:\n' + pulls
